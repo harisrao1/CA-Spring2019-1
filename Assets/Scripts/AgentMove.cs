@@ -33,6 +33,22 @@ public class AgentMove : MonoBehaviour
                 {
                     director.selected = "agent2";
                 }
+                else if (hit.collider.tag == "agent3")
+                {
+                    director.selected = "agent3";
+                }
+                else if (hit.collider.tag == "agent4")
+                {
+                    director.selected = "agent4";
+                }
+                else if (hit.collider.tag == "agent5")
+                {
+                    director.selected = "agent5";
+                }
+                else if (hit.collider.tag == "agent0")
+                {
+                    director.selected = "agent0";
+                }
                 else if(director.selected == agent.tag)
                 {
                     agent.SetDestination(hit.point);
