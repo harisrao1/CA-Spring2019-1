@@ -25,29 +25,9 @@ public class AgentMove : MonoBehaviour
             
             if(Physics.Raycast(ray,out hit))
             {
-                if (hit.collider.tag == "agent1")
+                if (hit.collider.transform.parent.gameObject.tag == "agents")
                 {
-                    director.selected = "agent1";
-                }
-                else if (hit.collider.tag == "agent2")
-                {
-                    director.selected = "agent2";
-                }
-                else if (hit.collider.tag == "agent3")
-                {
-                    director.selected = "agent3";
-                }
-                else if (hit.collider.tag == "agent4")
-                {
-                    director.selected = "agent4";
-                }
-                else if (hit.collider.tag == "agent5")
-                {
-                    director.selected = "agent5";
-                }
-                else if (hit.collider.tag == "agent0")
-                {
-                    director.selected = "agent0";
+                    director.selected = hit.collider.tag;
                 }
                 else if(director.selected == agent.tag)
                 {
