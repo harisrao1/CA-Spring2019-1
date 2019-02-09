@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AgentTags : MonoBehaviour
+public class Director : MonoBehaviour
 {
-    public string selectedAgent = "none";
+    public string selected = "none";
 }
