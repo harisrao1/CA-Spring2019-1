@@ -7,9 +7,13 @@ public class AgentMove : MonoBehaviour
 {
     public Camera cam;
     public NavMeshAgent agent;
+    public GameObject myTags;
+    public string currentAgent;
+    private AgentTags test;
+
     void Start()
     {
-        
+        test = myTags.GetComponent<AgentTags>();
     }
 
     // Update is called once per frame
@@ -19,10 +23,21 @@ public class AgentMove : MonoBehaviour
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-               
+            
             if(Physics.Raycast(ray,out hit))
             {
-                agent.SetDestination(hit.point);
+                if (hit.collider.tag == "agent1")
+                {
+                    test.selectedAgent = "agent1";
+                }
+                else if (hit.collider.tag == "agent2")
+                {
+                    test.selectedAgent = "agent2";
+                }
+                else if(test.selectedAgent == agent.tag)
+                {
+                    agent.SetDestination(hit.point);
+                }
             }
         }
 
