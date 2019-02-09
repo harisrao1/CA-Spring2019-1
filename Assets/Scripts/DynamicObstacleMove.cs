@@ -8,42 +8,43 @@ public class DynamicObstacleMove : MonoBehaviour
     public Camera cam;
     public NavMeshObstacle obstacle;
     private int count;
+    private float initialHeight;
+    bool open;
 
     void Start()
     {
+        open = false;
         count = 0;
+        initialHeight = obstacle.transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(open == true && obstacle.transform.position.y <= initialHeight + 4.7)
+        {
+            obstacle.transform.Translate(new Vector3(0f, 3f, 0f) * Time.deltaTime);
+        }
+        else if(count == 0 && open == false && obstacle.transform.position.y >= initialHeight)
+        {
+            obstacle.transform.Translate(new Vector3(0f, -3f, 0f) * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Map" && other.gameObject.transform.parent.tag != "Obstacles")
+        if (other.gameObject.transform.parent.tag == "agents")
         {
-            Debug.Log(count + "onEnterBefore");
+            open = true;
             ++count;
-            Debug.Log(count + "onEnterAfter");
-            while (obstacle.transform.position.y <= 7.5)
-            {
-                obstacle.transform.Translate(Vector3.up);
-            }
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag != "Map" && other.gameObject.transform.parent.tag != "Obstacles")
+        if (other.gameObject.transform.parent.tag == "agents")
         {
-            Debug.Log(count + "onExitBefore");
+            open = false;
             --count;
-            Debug.Log(count + "onExitAfter");
-            while (count == 0 && obstacle.transform.position.y >= 3.5)
-            {
-                obstacle.transform.Translate(Vector3.down);
-            }
         }
     }
 }
