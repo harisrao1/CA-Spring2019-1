@@ -21,7 +21,7 @@ public class DynamicObstacleMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(open == true && obstacle.transform.position.y <= initialHeight + 4.7)
+        if(open == true && obstacle.transform.position.y <= initialHeight + 5)
         {
             obstacle.transform.Translate(new Vector3(0f, 3f, 0f) * Time.deltaTime);
         }
