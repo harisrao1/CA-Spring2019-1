@@ -5,7 +5,7 @@ using UnityEngine;
 public class FreeLook : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float movespeed = 5;
+    public float movespeed = 1;
     public float MouseLookSens = 5;
     public float UpDownSens = 2;
 
@@ -30,19 +30,31 @@ public class FreeLook : MonoBehaviour
         transform.localRotation = Quaternion.AngleAxis(X, Vector3.up);
         transform.localRotation = transform.localRotation * Quaternion.AngleAxis(Y, Vector3.left);
 
-        if (Input.GetKey(KeyCode.LeftShift)){
-            transform.position = transform.position + transform.forward * Input.GetAxis("Vertical") * movespeed *2;
-            transform.position = transform.position + transform.right * Input.GetAxis("Horizontal") * movespeed *2;
-
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            movespeed = 2;
         }
         else
         {
-            transform.position = transform.position + transform.forward * Input.GetAxis("Vertical") * movespeed ;
-            transform.position = transform.position + transform.right * Input.GetAxis("Horizontal") * movespeed ;
+            movespeed = 1;
         }
-
-
-        if(Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position = transform.position + transform.forward * movespeed;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position = transform.position - transform.forward * movespeed;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position = transform.position + transform.right * movespeed;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position = transform.position - transform.right * movespeed;
+        }
+        if (Input.GetKey(KeyCode.Q))
         {
             transform.position = transform.position + transform.up * UpDownSens;
         }

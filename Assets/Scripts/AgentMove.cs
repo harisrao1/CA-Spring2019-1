@@ -9,6 +9,8 @@ public class AgentMove : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject getDirector;
     private Director director;
+    Ray ray;
+    RaycastHit hit;
 
     void Start()
     {
@@ -20,8 +22,7 @@ public class AgentMove : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+            ray = cam.ScreenPointToRay(Input.mousePosition);
             
             if(Physics.Raycast(ray,out hit))
             {
@@ -34,6 +35,14 @@ public class AgentMove : MonoBehaviour
                     agent.SetDestination(hit.point);
                 }
             }
+        }
+        if (director.selected == agent.tag)
+        {
+            GetComponent<Renderer>().material.color = Color.yellow;
+        }
+        else
+        {
+            GetComponent<Renderer>().material.color = Color.white;
         }
 
     }
