@@ -30,7 +30,7 @@ public class AgentMove : MonoBehaviour
                 {
                     director.selected = hit.collider.tag;
                 }
-                else if(hit.collider.transform.parent.gameObject.tag != "Obstacles" && director.selected == agent.tag)
+                else if(director.selected == agent.tag)
                 {
                     agent.SetDestination(hit.point);
                 }
