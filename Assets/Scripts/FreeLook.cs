@@ -14,6 +14,8 @@ public class FreeLook : MonoBehaviour
 
     void Start()
     {
+       // Camera.main.transform.Rotate(30, 132.5, 0);
+        
         
     }
 
@@ -25,10 +27,11 @@ public class FreeLook : MonoBehaviour
             X = X + Input.GetAxis("Mouse X") * MouseLookSens;
             Y = Y + Input.GetAxis("Mouse Y") * MouseLookSens;
             Y = Mathf.Clamp(Y, -90, 90);
-        }
 
-        transform.localRotation = Quaternion.AngleAxis(X, Vector3.up);
-        transform.localRotation = transform.localRotation * Quaternion.AngleAxis(Y, Vector3.left);
+
+            transform.localRotation = Quaternion.AngleAxis(X, Vector3.up);
+            transform.localRotation = transform.localRotation * Quaternion.AngleAxis(Y, Vector3.left);
+        }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
