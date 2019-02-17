@@ -50,8 +50,16 @@ public class AgentMove : MonoBehaviour
         }
         if (director.selected == agent.tag)
         {
-            GetComponent<Renderer>().material.color = Color.yellow;
-        }
+            if (agent.transform.parent.gameObject.tag == "nazguls")
+            {
+                GetComponent<Renderer>().material.color = Color.red;
+            }
+            else
+            {
+                GetComponent<Renderer>().material.color = Color.yellow;
+            }
+         }
+        
         else
         {
             if (agent.transform.parent.gameObject.tag == "nazguls")
