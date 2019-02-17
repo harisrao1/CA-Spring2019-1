@@ -7,6 +7,7 @@ public class AgentMove : MonoBehaviour
 {
     public Camera cam;
     public NavMeshAgent agent;
+    public NavMeshAgent nazgul;
     public GameObject getDirector;
     private Director director;
     Ray ray;
@@ -33,6 +34,9 @@ public class AgentMove : MonoBehaviour
                 else if(director.selected == agent.tag)
                 {
                     agent.SetDestination(hit.point);
+                }else if(director.selected == "nazgul")
+                {
+                    director.selected = hit.collider.tag;
                 }
             }
         }
@@ -40,10 +44,20 @@ public class AgentMove : MonoBehaviour
         {
             GetComponent<Renderer>().material.color = Color.yellow;
         }
+        else if (director.selected == nazgul.tag)
+        {
+            GetComponent<Renderer>().material.color = Color.red;
+           
+        }
         else
         {
             GetComponent<Renderer>().material.color = Color.white;
         }
 
+        
+
     }
+
+  
+
 }
