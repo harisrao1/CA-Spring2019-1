@@ -33,7 +33,7 @@ public class DynamicObstacleMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.transform.parent.tag == "agents")
+        if (other.gameObject.transform.parent.tag == "agents" || other.gameObject.transform.parent.tag == "nazguls")
         {
             open = true;
             ++count;
@@ -41,7 +41,7 @@ public class DynamicObstacleMove : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.transform.parent.tag == "agents")
+        if (other.gameObject.transform.parent.tag == "agents" || other.gameObject.transform.parent.tag == "nazguls")
         {
             open = false;
             --count;
