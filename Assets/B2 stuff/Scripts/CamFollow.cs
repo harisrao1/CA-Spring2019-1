@@ -10,9 +10,7 @@ public class CamFollow : MonoBehaviour
     public GameObject PlayerObj;
     public GameObject CamFollowObj;
     public float clampAngle = 80;
-    public float XDistance;
-    public float YDistance;
-    public float ZDistance;
+   
     public float mouseX;
     public float mouseY;
     public float smoothX;
@@ -20,16 +18,20 @@ public class CamFollow : MonoBehaviour
     public float rotationX;
     public float rotationY;
 
+    private Vector3 offset;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        offset = transform.position - PlayerObj.transform.position;
         Vector3 rotation = transform.localRotation.eulerAngles;
         rotationX = rotation.x;
         rotationY = rotation.y;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
     }
 
     // Update is called once per frame
@@ -50,7 +52,8 @@ public class CamFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        CameraFollower();
+        transform.position = PlayerObj.transform.position + offset;
+       // CameraFollower();
     }
 
     void CameraFollower()

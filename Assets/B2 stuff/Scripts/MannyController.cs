@@ -5,10 +5,15 @@ using UnityEngine;
 public class MannyController : MonoBehaviour
 {
     public float speed = 4;
+    public float runspeed = 8;
     public float rotationSpeed = 80;
-    public float gravity = 8;
+    public float gravity = 20;
     float rotation;
-      Vector3 movedir = Vector3.zero;
+    float rotationX;
+    float rotationY;
+    Vector3 movedir = Vector3.zero;
+    
+
 
     CharacterController controller;
     Animator anim;
@@ -22,57 +27,44 @@ public class MannyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //rotationX += Input.GetAxis("Mouse Y") * Time.deltaTime * rotationSpeed;
+        rotationY += Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
+        transform.rotation = Quaternion.Euler(0, rotationY, 0);
+
         if (controller.isGrounded)
         {
-            if(Input.GetKey(KeyCode.W))  // Move forward
+
+            if (Input.GetKey(KeyCode.W))  // Move forward
             {
-                anim.SetInteger("walk", 1);
-                movedir = new Vector3(0, 0, 1);
-                movedir = movedir * speed;
+
+                if (Input.GetKey(KeyCode.LeftShift))  // Move forward
+                {
+                    anim.SetInteger("run", 1);
+                    transform.position += transform.forward * Time.deltaTime * runspeed;
+                    // movedir = new Vector3(0, 0, 1);
+                    // movedir = movedir * runspeed;
+                }
+                else
+                {
+                    anim.SetInteger("run", 0);
+
+                     anim.SetInteger("walk", 1);
+                    transform.position += transform.forward * Time.deltaTime * speed;
+                   // movedir = new Vector3(0, 0, 1);
+                   // movedir = movedir * speed;
+                }
             }
             if (Input.GetKeyUp(KeyCode.W))
             {
                 anim.SetInteger("walk", 0);
-                movedir = new Vector3(0, 0, 0);
+                transform.position += transform.forward * Time.deltaTime * 0;
+                // movedir = new Vector3(0, 0, 0);
+
             }
-            if (Input.GetKey(KeyCode.S))  // Move backward
-            {
-                anim.SetInteger("walk", 1);
-                movedir = new Vector3(0, 0, -1);
-                movedir = movedir * speed;
-            }
-            if (Input.GetKeyUp(KeyCode.S))
-            {
-                anim.SetInteger("walk", 0);
-                movedir = new Vector3(0, 0, 0);
-            }
-            if (Input.GetKey(KeyCode.A))  // Move left
-            {
-                anim.SetInteger("leftwalk", 1);
-                anim.SetInteger("walk", 1);
-                movedir = new Vector3(-1, 0, 0);
-                movedir = movedir * speed;
-            }
-            if (Input.GetKeyUp(KeyCode.A))
-            {
-                anim.SetInteger("walk", 0);
-                movedir = new Vector3(0, 0, 0);
-            }
-            if (Input.GetKey(KeyCode.D))  // Move right
-            {
-                anim.SetInteger("rightwalk", 1);
-                
-                anim.SetInteger("walk", 1);
-                movedir = new Vector3(1, 0, 0);
-                movedir = movedir * speed;
-            }
-            if (Input.GetKeyUp(KeyCode.D))
-            {
-                anim.SetInteger("walk", 0);
-                anim.SetInteger("rightwalk", 0);
-                movedir = new Vector3(0, 0, 0);
-            }
+
         }
+
+        
 
         
         movedir.y -= gravity * Time.deltaTime;
