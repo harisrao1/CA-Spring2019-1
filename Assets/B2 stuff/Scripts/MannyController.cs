@@ -48,6 +48,7 @@ public class MannyController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A))  // Move left
             {
+                anim.SetInteger("leftwalk", 1);
                 anim.SetInteger("walk", 1);
                 movedir = new Vector3(-1, 0, 0);
                 movedir = movedir * speed;
@@ -59,6 +60,8 @@ public class MannyController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.D))  // Move right
             {
+                anim.SetInteger("rightwalk", 1);
+                
                 anim.SetInteger("walk", 1);
                 movedir = new Vector3(1, 0, 0);
                 movedir = movedir * speed;
@@ -66,6 +69,7 @@ public class MannyController : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.D))
             {
                 anim.SetInteger("walk", 0);
+                anim.SetInteger("rightwalk", 0);
                 movedir = new Vector3(0, 0, 0);
             }
         }
