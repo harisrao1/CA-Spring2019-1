@@ -7,7 +7,7 @@ public class MannyController : MonoBehaviour
     public float speed = 4;
     public float runspeed = 8;
     public float rotationSpeed = 80;
-    public float gravity = 20;
+    public float gravity = 8;
     float rotation;
     float rotationX;
     float rotationY;
@@ -37,30 +37,73 @@ public class MannyController : MonoBehaviour
             if (Input.GetKey(KeyCode.W))  // Move forward
             {
 
-                if (Input.GetKey(KeyCode.LeftShift))  // Move forward
+                if (Input.GetKey(KeyCode.LeftShift))  // Move forward RUN
                 {
                     anim.SetInteger("run", 1);
                     transform.position += transform.forward * Time.deltaTime * runspeed;
-                    // movedir = new Vector3(0, 0, 1);
-                    // movedir = movedir * runspeed;
                 }
                 else
                 {
                     anim.SetInteger("run", 0);
 
-                     anim.SetInteger("walk", 1);
+                    anim.SetInteger("walk", 1);
                     transform.position += transform.forward * Time.deltaTime * speed;
-                   // movedir = new Vector3(0, 0, 1);
-                   // movedir = movedir * speed;
+                    if (Input.GetKeyUp(KeyCode.S))
+                    {
+                        anim.SetInteger("jump", 0);
+                        transform.position += transform.forward * Time.deltaTime * 0;
+
+
+                    }
+
                 }
             }
             if (Input.GetKeyUp(KeyCode.W))
             {
                 anim.SetInteger("walk", 0);
                 transform.position += transform.forward * Time.deltaTime * 0;
-                // movedir = new Vector3(0, 0, 0);
+                
 
             }
+             if (Input.GetKey(KeyCode.S))  // Move backward
+            {
+
+                    if (Input.GetKey(KeyCode.LeftShift))  // Move backward RUN
+                    {
+                        anim.SetInteger("run", 1);
+                        transform.position -= transform.forward * Time.deltaTime * runspeed;
+                    }
+
+                    else
+                    {
+                        anim.SetInteger("run", 0);
+
+                        anim.SetInteger("walk", 1);
+                        transform.position -= transform.forward * Time.deltaTime * speed;
+
+                    }
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                anim.SetInteger("walk", 0);
+                transform.position += transform.forward * Time.deltaTime * 0;
+                
+
+            }
+            if (Input.GetKey(KeyCode.Space))
+            {
+                anim.SetInteger("jump", 1);
+                
+                transform.position += transform.up * Time.deltaTime * speed;
+
+
+            }
+            else
+            {
+                anim.SetInteger("jump", 0);
+
+            }
+            
 
         }
 
