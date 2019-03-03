@@ -10,6 +10,8 @@ public class AgentMove : MonoBehaviour
     public GameObject getDirector;
     private Director director;
     public GameObject currentFloor;
+    CharacterController controller;
+    Animator anim;
     //private string safeFloor;
     private GameObject safeFloor;
     private float x;
@@ -24,6 +26,8 @@ public class AgentMove : MonoBehaviour
     void Start()
     {
         director = getDirector.GetComponent<Director>();
+        controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
         //currentFloor = "anything";
         moving = false;
         //safeFloor = "floor2";
@@ -31,6 +35,14 @@ public class AgentMove : MonoBehaviour
 
     void Update()
     {
+        if (agent.velocity!=Vector3.zero)
+        {
+            anim.SetInteger("walk", 1);
+        }
+        else
+        {
+            anim.SetInteger("walk", 0);
+        }
         if(Input.GetMouseButtonDown(0))
         {
             ray = cam.ScreenPointToRay(Input.mousePosition);
