@@ -161,7 +161,8 @@ ModelImporter:
     400152: Spine
     400154: TongueBack
     400156: TongueTip
-    7400000: Strafe_90HipsLeftFaceFwd
+    7400000: WalkRight
+    7400002: WalkLeft
     9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
@@ -198,26 +199,54 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Strafe_90HipsLeftFaceFwd
+      name: WalkRight
       takeName: _48_a_U1_M_P_Strafe_90HipsLeftFaceFwd__Fb_p90_No_0_PJ_3
-      firstFrame: 74
-      lastFrame: 634
+      firstFrame: 117
+      lastFrame: 145
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -35.4
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: WalkLeft
+      takeName: _48_a_U1_M_P_Strafe_90HipsLeftFaceFwd__Fb_p90_No_0_PJ_3
+      firstFrame: 117
+      lastFrame: 145
+      wrapMode: 0
+      orientationOffsetY: -35.4
+      level: 0
+      cycleOffset: 0.5
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 1
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []

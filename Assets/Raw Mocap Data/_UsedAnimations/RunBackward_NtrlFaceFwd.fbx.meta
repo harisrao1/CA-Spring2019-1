@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fdc39e3202ebc4d4a8a473fd95fcff55
+guid: d5b03f1a9ae0e2e41af638e3ae9986c3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -43,43 +43,45 @@ ModelImporter:
     100074: LeftToes
     100076: LeftUpLeg
     100078: Neck
-    100080: Reference
-    100082: RightArm
-    100084: RightCheek
-    100086: RightEye
-    100088: RightEyelidLower
-    100090: RightEyelidUpper
-    100092: RightFoot
-    100094: RightForeArm
-    100096: RightHand
-    100098: RightHandIndex1
-    100100: RightHandIndex2
-    100102: RightHandIndex3
-    100104: RightHandMiddle1
-    100106: RightHandMiddle2
-    100108: RightHandMiddle3
-    100110: RightHandPinky1
-    100112: RightHandPinky2
-    100114: RightHandPinky3
-    100116: RightHandRing1
-    100118: RightHandRing2
-    100120: RightHandRing3
-    100122: RightHandThumb1
-    100124: RightHandThumb2
-    100126: RightHandThumb3
-    100128: RightInnerBrow
-    100130: RightIOuterBrow
-    100132: RightLeg
-    100134: RightLipCorner
-    100136: RightLipLower
-    100138: RightLipUpper
-    100140: RightNostril
-    100142: RightShoulder
-    100144: RightToes
-    100146: RightUpLeg
-    100148: Spine
-    100150: TongueBack
-    100152: TongueTip
+    100080: Pivot
+    100082: Reference
+    100084: RightArm
+    100086: RightCheek
+    100088: RightEye
+    100090: RightEyelidLower
+    100092: RightEyelidUpper
+    100094: RightFoot
+    100096: RightForeArm
+    100098: RightHand
+    100100: RightHandIndex1
+    100102: RightHandIndex2
+    100104: RightHandIndex3
+    100106: RightHandMiddle1
+    100108: RightHandMiddle2
+    100110: RightHandMiddle3
+    100112: RightHandPinky1
+    100114: RightHandPinky2
+    100116: RightHandPinky3
+    100118: RightHandRing1
+    100120: RightHandRing2
+    100122: RightHandRing3
+    100124: RightHandThumb1
+    100126: RightHandThumb2
+    100128: RightHandThumb3
+    100130: RightInnerBrow
+    100132: RightIOuterBrow
+    100134: RightLeg
+    100136: RightLipCorner
+    100138: RightLipLower
+    100140: RightLipUpper
+    100142: RightNostril
+    100144: RightShoulder
+    100146: RightToes
+    100148: RightUpLeg
+    100150: Root
+    100152: Spine
+    100154: TongueBack
+    100156: TongueTip
     400000: //RootNode
     400002: Chest
     400004: Head
@@ -120,44 +122,47 @@ ModelImporter:
     400074: LeftToes
     400076: LeftUpLeg
     400078: Neck
-    400080: Reference
-    400082: RightArm
-    400084: RightCheek
-    400086: RightEye
-    400088: RightEyelidLower
-    400090: RightEyelidUpper
-    400092: RightFoot
-    400094: RightForeArm
-    400096: RightHand
-    400098: RightHandIndex1
-    400100: RightHandIndex2
-    400102: RightHandIndex3
-    400104: RightHandMiddle1
-    400106: RightHandMiddle2
-    400108: RightHandMiddle3
-    400110: RightHandPinky1
-    400112: RightHandPinky2
-    400114: RightHandPinky3
-    400116: RightHandRing1
-    400118: RightHandRing2
-    400120: RightHandRing3
-    400122: RightHandThumb1
-    400124: RightHandThumb2
-    400126: RightHandThumb3
-    400128: RightInnerBrow
-    400130: RightIOuterBrow
-    400132: RightLeg
-    400134: RightLipCorner
-    400136: RightLipLower
-    400138: RightLipUpper
-    400140: RightNostril
-    400142: RightShoulder
-    400144: RightToes
-    400146: RightUpLeg
-    400148: Spine
-    400150: TongueBack
-    400152: TongueTip
-    7400000: JogForward_NtrlFaceFwd
+    400080: Pivot
+    400082: Reference
+    400084: RightArm
+    400086: RightCheek
+    400088: RightEye
+    400090: RightEyelidLower
+    400092: RightEyelidUpper
+    400094: RightFoot
+    400096: RightForeArm
+    400098: RightHand
+    400100: RightHandIndex1
+    400102: RightHandIndex2
+    400104: RightHandIndex3
+    400106: RightHandMiddle1
+    400108: RightHandMiddle2
+    400110: RightHandMiddle3
+    400112: RightHandPinky1
+    400114: RightHandPinky2
+    400116: RightHandPinky3
+    400118: RightHandRing1
+    400120: RightHandRing2
+    400122: RightHandRing3
+    400124: RightHandThumb1
+    400126: RightHandThumb2
+    400128: RightHandThumb3
+    400130: RightInnerBrow
+    400132: RightIOuterBrow
+    400134: RightLeg
+    400136: RightLipCorner
+    400138: RightLipLower
+    400140: RightLipUpper
+    400142: RightNostril
+    400144: RightShoulder
+    400146: RightToes
+    400148: RightUpLeg
+    400150: Root
+    400152: Spine
+    400154: TongueBack
+    400156: TongueTip
+    7400000: RunBackward_NtrlFaceFwd
+    7400002: RunBck
     9500000: //RootNode
     2186277476908879412: ImportLogs
   externalObjects: {}
@@ -173,8 +178,11 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'LeftLeg'
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Errors found in
+      old project file will be treated as a warnings. Configuration mis-match will
+      be ignored, but current Configuration needs to be fixed:\n\tTransform 'Pivot'
+      not found in HumanDescription.\nCopied Avatar Rig Configuration mis-match. Bone
+      length in copied configuration does not match position in animation file:\n\t'LeftLeg'
       : position error = 7.696520 mm\n\t'LeftFoot' : position error = 15.233778 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
@@ -191,10 +199,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: JogForward_NtrlFaceFwd
-      takeName: _12_a_U1_M_P_JogForward_NtrlFaceFwd__Fb_p0_No_0_PJ_3
-      firstFrame: 28
-      lastFrame: 511
+      name: RunBackward_NtrlFaceFwd
+      takeName: _25_a_U1_M_P_RunBackward_NtrlFaceFwd__Fb_p0_No_0_PJ_4
+      firstFrame: 165
+      lastFrame: 800
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -205,6 +213,34 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RunBck
+      takeName: _25_a_U1_M_P_RunBackward_NtrlFaceFwd__Fb_p0_No_0_PJ_4
+      firstFrame: 226
+      lastFrame: 258
+      wrapMode: 0
+      orientationOffsetY: -10.92
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1

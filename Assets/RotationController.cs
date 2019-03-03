@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class RotationController : MonoBehaviour
 {
-    //public float speed = 3;
-    //public float inspeed = 3;
-    //public float runspeed = 0.5f;
     public float rotationSpeed = 80;
     public float gravity = 100;
-    // public float jumpspeed = 7;
-    //float rotation;
-   // float rotationX;
     float rotationY;
-    //Vector3 movedir = Vector3.zero;
-    //private Rigidbody rb;
 
+    Vector3 movedir = Vector3.zero;
 
+    public float speed = 3;
 
     CharacterController controller;
     //Animator anim;
@@ -24,8 +18,6 @@ public class RotationController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        //anim = GetComponent<Animator>();
-        //rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -33,7 +25,18 @@ public class RotationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rotationX += Input.GetAxis("Mouse Y") * Time.deltaTime * rotationSpeed;
+        if (controller.isGrounded)
+        {
+            movedir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            movedir = transform.TransformDirection(movedir);
+            movedir *= speed;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("space");
+                movedir.y = 40;
+            }
+        }
+
         rotationY += Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
         transform.rotation = Quaternion.Euler(0, rotationY, 0);
     }
