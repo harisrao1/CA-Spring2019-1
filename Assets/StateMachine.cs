@@ -24,7 +24,7 @@ public class StateMachine : StateMachineBehaviour
             animator.SetFloat(m_Fast, 0, m_Damping, Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+       /* if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetInteger(m_Jump, 1);
         }
@@ -32,7 +32,7 @@ public class StateMachine : StateMachineBehaviour
         {
             animator.SetInteger(m_Jump, 0);
         }
-
+*/
         Vector2 input = new Vector2(horizontal, vertical).normalized;
 
         animator.SetFloat(m_HashHorizontalPara, input.x, m_Damping, Time.deltaTime);
