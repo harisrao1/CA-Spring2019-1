@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotationController : MonoBehaviour
+public class Controller : MonoBehaviour
 {
     public float rotationSpeed = 80;
     public float gravity = 100;
