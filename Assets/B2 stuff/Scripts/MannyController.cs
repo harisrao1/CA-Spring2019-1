@@ -37,18 +37,19 @@ public class MannyController : MonoBehaviour
 
         if (controller.isGrounded)
         {
-           
+            Debug.Log("grounded");
             movedir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             movedir = transform.TransformDirection(movedir);
             movedir *= speed;
             if (Input.GetKeyUp(KeyCode.LeftShift)) 
             {
+                Debug.Log("running");
                 anim.SetInteger("run", 0);
                // speed = runspeed;
             }
             if (Input.GetKey(KeyCode.W))  // Move forward
             {
-               
+                Debug.Log("forward");
 
                 if (Input.GetKey(KeyCode.LeftShift))  // Move forward RUN
                 {
