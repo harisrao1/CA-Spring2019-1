@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MannyController : MonoBehaviour
 {
-    public float speed = 4;
-    public float inspeed = 4;
+    public float speed = 3;
+    public float inspeed = 3;
     public float runspeed = 0.5f;
     public float rotationSpeed = 80;
     public float gravity = 100;
@@ -48,24 +48,23 @@ public class MannyController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.W))  // Move forward
             {
+               
 
                 if (Input.GetKey(KeyCode.LeftShift))  // Move forward RUN
                 {
                     anim.SetInteger("run", 1);
+                    anim.SetInteger("walk", 0);
                     speed = runspeed;
                 }
                 else
                 {
                     anim.SetInteger("run", 0);
                     anim.SetInteger("walk", 1);
-                    if (Input.GetKeyUp(KeyCode.S))
-                    {
-                        anim.SetInteger("jump", 0);
-                        transform.position += transform.forward * Time.deltaTime * 0;
-                    }
+                 
                     speed = inspeed;
 
                 }
+              
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     anim.SetInteger("walk", 0);
@@ -82,7 +81,7 @@ public class MannyController : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.W))
             {
                 anim.SetInteger("walk", 0);
-                
+                anim.SetInteger("run", 0);
 
             }
              if (Input.GetKey(KeyCode.S))  // Move backward
@@ -101,29 +100,37 @@ public class MannyController : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.S))
             {
                 anim.SetInteger("walk", 0);
+                anim.SetInteger("run", 0);
             }
             
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (anim.GetInteger("run") == 1)
                 {
+                    anim.SetInteger("run", 0);
                     anim.SetInteger("runjump", 1);
                     
                     movedir.y = 4.5f;
                 }
-                else
+                else 
                 {
                     anim.SetInteger("jump", 1);
                     movedir.y = 4;
                 }
+                
             }
             else
             {
                 anim.SetInteger("jump", 0);
                 anim.SetInteger("runjump", 0);
+                
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                anim.SetInteger("run", 0);
+                // speed = runspeed;
             }
 
-            
 
 
         }
