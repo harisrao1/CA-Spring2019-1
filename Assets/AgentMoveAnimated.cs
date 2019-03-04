@@ -18,7 +18,11 @@ public class AgentMoveAnimated : MonoBehaviour
     private float y;
     private float z;
     private bool moving;
+    private bool jumping;
     private GameObject floor;
+    public float jumpSpeed = 40;
+    private bool onoffmesh;
+   // public float stopingDistance;
     Vector3 destination = new Vector3(0, 0, 0);
     Ray ray;
     RaycastHit hit;
@@ -32,14 +36,67 @@ public class AgentMoveAnimated : MonoBehaviour
         //currentFloor = "anything";
         moving = false;
         //safeFloor = "floor2";
+        jumping = false;
     }
 
     void Update()
     {
-        if (!(agent.velocity.x < 1f && agent.velocity.x >-1)  || !(agent.velocity.z < 1 && agent.velocity.z > -1))
+        if (agent.isOnOffMeshLink)
+        {
+            onoffmesh = true;
+        }
+        if (onoffmesh) {
+            Debug.Log("hey");
+            animator.SetInteger("jump", 1);
+            if ((agent.transform.position.x < agent.currentOffMeshLinkData.endPos.x) )
+            {
+                agent.transform.Translate(Vector3.back * Time.deltaTime * jumpSpeed);
+                
+            }
+            if ((agent.transform.position.x > agent.currentOffMeshLinkData.endPos.x))
+            {
+                
+                agent.transform.Translate(Vector3.forward * Time.deltaTime * jumpSpeed);
+               
+            }
+            if ((agent.transform.position.z < agent.currentOffMeshLinkData.endPos.z))
+            {
+                
+                agent.transform.Translate(Vector3.right * Time.deltaTime * jumpSpeed);
+                
+            } 
+            if ((agent.transform.position.z > agent.currentOffMeshLinkData.endPos.z))
+            {
+                
+                agent.transform.Translate(Vector3.left * Time.deltaTime * jumpSpeed);
+               
+            }
+
+            if (agent.transform.position.x >= agent.currentOffMeshLinkData.endPos.x - 0.2
+&& agent.transform.position.x <= agent.currentOffMeshLinkData.endPos.x + 0.2
+&& agent.transform.position.z >= agent.currentOffMeshLinkData.endPos.z - 0.2
+&& agent.transform.position.z <= agent.currentOffMeshLinkData.endPos.z + 0.2)
+            {
+                
+                Debug.Log("heyff");
+                agent.CompleteOffMeshLink();
+                onoffmesh = false;
+                agent.Resume();
+                
+
+            }
+            
+        }
+        else
+        {
+            animator.SetInteger("jump", 0);
+        }
+        Debug.Log(onoffmesh);
+        
+        if (agent.remainingDistance > 1.2f)
         {
             animator.SetInteger("walk", 1);
-            Debug.Log("Velocity" + agent.velocity);
+           // Debug.Log("Velocity" + agent.velocity);
         }
         else
         {
@@ -130,7 +187,7 @@ public class AgentMoveAnimated : MonoBehaviour
         {
             currentFloor = other.gameObject;
         }
-        if (other.gameObject.transform.parent.tag == "jumptrigger")
+       /* if (other.gameObject.transform.parent.tag == "jumptrigger")
         {
             Debug.Log("trig");
             animator.SetInteger("walk", 0);
@@ -140,7 +197,7 @@ public class AgentMoveAnimated : MonoBehaviour
         {
             animator.SetInteger("jump", 0);
            // animator.SetInteger("walk", 1);
-        }
+        }*/
     }
 
     
