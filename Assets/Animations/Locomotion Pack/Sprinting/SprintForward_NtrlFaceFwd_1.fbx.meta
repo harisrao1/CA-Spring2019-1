@@ -193,16 +193,16 @@ ModelImporter:
     - serializedVersion: 16
       name: SprintForward_NtrlFaceFwd_1
       takeName: _36_a_U1_M_P_SprintForward_NtrlFaceFwd__Fb_p0_No_0_1_part_01
-      firstFrame: 53
-      lastFrame: 535
+      firstFrame: 99
+      lastFrame: 113
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0

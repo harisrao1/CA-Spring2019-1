@@ -193,15 +193,15 @@ ModelImporter:
     - serializedVersion: 16
       name: RunForward_NtrlFaceFwd
       takeName: _24_a_U1_M_P_RunForward_NtrlFaceFwd__Fb_p0_No_0_PJ_10
-      firstFrame: 88
-      lastFrame: 575
+      firstFrame: 124
+      lastFrame: 179
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
