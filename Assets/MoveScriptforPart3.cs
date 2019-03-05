@@ -10,8 +10,12 @@ public class MoveScriptforPart3 : MonoBehaviour
     public float walkspeed;
     private float dynamicwalkspeed;
     private bool isStopped;
+    [Range(-15, 75)] [SerializeField] private float XPosition = 60;
+    [Range(-15, 75)] [SerializeField] private float ZPosition = 60;
+
     void Start()
     {
+       // dest = new Vector3(XPosition, 0, ZPosition);
         agent = this.GetComponent<NavMeshAgent>();
         agent.SetDestination(dest.position);
         animator = this.GetComponent<Animator>();
@@ -26,8 +30,9 @@ public class MoveScriptforPart3 : MonoBehaviour
         {
             animator.SetInteger("walk", 0);
             agent.speed = 0;
-            agent.angularSpeed = 0;
+           // agent.angularSpeed = 0;
         }
+        
         if (agent.remainingDistance > agent.stoppingDistance)
         {
             
@@ -61,6 +66,10 @@ public class MoveScriptforPart3 : MonoBehaviour
         if (other.GetComponent<NavMeshAgent>().velocity == Vector3.zero)
         {
             isStopped = true;
+        }
+        else
+        {
+            isStopped = false;
         }
         
      
