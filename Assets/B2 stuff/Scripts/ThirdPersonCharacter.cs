@@ -33,6 +33,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public Camera cam;
         public NavMeshAgent agent;
 
+        public GameObject getDirector;
+        private Director director;
+
+        private Material[] skinMaterial;
+        private Color[] orignalColor;
+
+        private float runC;
+
         private float runspeed;
         private float walkspeed;
 

@@ -34,15 +34,14 @@ public class PlayerController : MonoBehaviour
 
     void Update ()
     {
-
         if (agent.isOnOffMeshLink)
         {
             onoffmesh = true;
-            animator.SetInteger("jump", 1);
+            animator.SetInteger("Jump", 1);
         }
         else
         {
-            animator.SetInteger("jump", 0);
+            animator.SetInteger("Jump", 0);
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -92,17 +91,21 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 runC++;
-                Debug.Log(runC);
             }
+            Debug.Log("Agent speed: " + agent.speed);
             if (runC % 2 == 0)
             {
                 skinMaterial[2].color = Color.red;
                 skinMaterial[1].color = Color.red;
+                agent.speed = 1.25f;
+                animator.speed = 0.34f;
             }
             else
             {
                 skinMaterial[2].color = Color.blue;
                 skinMaterial[1].color = Color.blue;
+                agent.speed = 4f;
+                animator.speed = 0.84f;
             }
 
         }
