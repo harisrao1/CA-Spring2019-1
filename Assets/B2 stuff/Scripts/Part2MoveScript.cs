@@ -5,18 +5,18 @@ using UnityEngine.AI;
 
 public class Part2MoveScript : MonoBehaviour
 {
-    public Camera cam;
-    public NavMeshAgent agent;
-    public GameObject getDirector;
-    private Director director;
-    CharacterController controller;
-    Animator animator;
+    /*//public Camera cam;
+    //public NavMeshAgent agent;
+    //public GameObject getDirector;
+    //private Director director;
+    //CharacterController controller;
+    //Animator animator;
     //private string safeFloor;
-    private float x;
-    private float y;
-    private float z;
-    public float jumpSpeed = 40;
-    private bool onoffmesh;
+    //private float x;
+    //private float y;
+    //private float z;
+    //public float jumpSpeed = 40;
+    //private bool onoffmesh;
     private Material[] skinMaterial;
     private Color[] orignalColor;
     private bool Inrun;
@@ -25,9 +25,9 @@ public class Part2MoveScript : MonoBehaviour
     private float walkspeed;
     
     // public float stopingDistance;
-    Vector3 destination = new Vector3(0, 0, 0);
-    Ray ray;
-    RaycastHit hit;
+    //Vector3 destination = new Vector3(0, 0, 0);
+    ///Ray ray;
+    //RaycastHit hit;
     
     void Start()
     {
@@ -38,7 +38,7 @@ public class Part2MoveScript : MonoBehaviour
         runC = 2;
         walkspeed = agent.speed;
         runspeed = agent.speed * 3;
-        Debug.Log(walkspeed + "|" + runspeed);
+        //Debug.Log(walkspeed + "|" + runspeed);
         //currentFloor = "anything";
         //safeFloor = "floor2";
     }
@@ -48,7 +48,7 @@ public class Part2MoveScript : MonoBehaviour
         
         
 
-        if (agent.isOnOffMeshLink)
+        /*if (agent.isOnOffMeshLink)
         {
             onoffmesh = true;
             animator.SetInteger("jump", 1);
@@ -56,10 +56,10 @@ public class Part2MoveScript : MonoBehaviour
         else
         {
             animator.SetInteger("jump", 0);
-        }
+        }*/
       
        // Debug.Log(onoffmesh);
-        if (Inrun)
+        /*if (Inrun)
         {
             if (agent.remainingDistance > agent.stoppingDistance)
             {
@@ -90,10 +90,10 @@ public class Part2MoveScript : MonoBehaviour
                 animator.SetInteger("walk", 0);
                 animator.SetInteger("run", 0);
             }
-        }
+        }*/
         
 
-       if (Input.GetMouseButtonDown(0))
+       /*if (Input.GetMouseButtonDown(0))
         {
             ray = cam.ScreenPointToRay(Input.mousePosition);
 
@@ -108,7 +108,8 @@ public class Part2MoveScript : MonoBehaviour
                     agent.SetDestination(hit.point);
                 }
             }
-        }
+        }*/
+        /*
         SkinnedMeshRenderer[] renderers = GetComponentsInChildren<SkinnedMeshRenderer>();
         skinMaterial = new Material[renderers.Length];
         orignalColor = new Color[renderers.Length];
@@ -162,5 +163,5 @@ public class Part2MoveScript : MonoBehaviour
        
     }
 
-    
+    */
 }

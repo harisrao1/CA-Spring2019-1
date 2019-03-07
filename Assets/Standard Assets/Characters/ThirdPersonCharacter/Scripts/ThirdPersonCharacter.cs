@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {

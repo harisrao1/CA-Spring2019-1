@@ -20,7 +20,7 @@ public class RoomTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Safe Floor Min Count: " + director.safeFloorCount);
+        //Debug.Log("Safe Floor Min Count: " + director.safeFloorCount);
         if (count > director.safeFloorCount)
         {
             for (int i = 0; i < 3; i++)
@@ -40,18 +40,18 @@ public class RoomTracker : MonoBehaviour
             {
                 if (director.list.Contains(floor))
                 {
-                    Debug.Log("Already in list");
+                    //Debug.Log("Already in list");
                     break;
                 }
                 else if (!director.list.Contains(floor))
                 {
-                    Debug.Log("Adding to list");
+                    //Debug.Log("Adding to list");
                     director.list.Add(floor);
                     break;
                 }
                 else
                 {
-                    Debug.Log("How? " + floor.tag);
+                    //Debug.Log("How? " + floor.tag);
                 }
             }
         }

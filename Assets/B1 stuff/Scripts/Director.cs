@@ -11,5 +11,4 @@ public class Director : MonoBehaviour
     public GameObject floor2;
     public GameObject floor3;
     public GameObject floor4;
-
 }
