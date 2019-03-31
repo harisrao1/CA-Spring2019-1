@@ -5,7 +5,7 @@ using UnityEngine;
 public class FreeLook : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float movespeed = 1;
+    public float movespeed = 0.2f;
     public float MouseLookSens = 5;
     public float UpDownSens = 2;
 
@@ -35,11 +35,11 @@ public class FreeLook : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            movespeed = 2;
+            movespeed = 0.4f;
         }
         else
         {
-            movespeed = 1;
+            movespeed = 0.2f;
         }
         if (Input.GetKey(KeyCode.W))
         {

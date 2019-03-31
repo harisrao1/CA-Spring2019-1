@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.transform.parent.gameObject.tag == "agents")
+                if (hit.collider.transform.gameObject.tag == "agent1")
                 {
                     director.selected = hit.collider.tag;
                 }
